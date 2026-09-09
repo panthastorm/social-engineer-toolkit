@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "darknet": {
+      "command": "npx",
+      "args": ["-y", "darknet-mcp-server"]
+    }
+  }
+}
