@@ -1,29 +1,22 @@
-# Breach & credential intelligence
-export HIBP_API_KEY=your-key           # Enables breach account search & paste search
-export INTELX_API_KEY= ed0f774f-9461-4c7f-b467-f92215db9e49         # Enables 4 IntelligenceX tools
-
-# Threat intelligence
-export OTX_API_KEY= c5c66630169334dfef2c4ccc3a188bf633ac7764c68bee84d34adf1355b2d05a
-# Increases AlienVault OTX rate limits
-export ABUSEIPDB_API_KEY= 1ab938d148784dbcb57ffbe55618c4c5a3d85beae47a6f08f200d97f487431807cb3d0b58458312b
- # Enables 4 AbuseIPDB tools
-export ABUSECH_AUTH_KEY= 85c054c5b5fcf39e75e7844d1d87e1806c940a4202e37ec0 
- # Higher rate limits for abuse.ch suite
-export PULSEDIVE_API_KEY= d501e22f9ed05092a776ceccebe93573327e9bcf7abee820c03138a5bd180213
- # Higher rate limits for Pulsedive
-
-# Stealer logs & credentials
-export HUDSONROCK_API_KEY=your-key     # Enables 3 Hudson Rock stealer log tools
-
-# Exploit & malware analysis
-export VULNERS_API_KEY= BPU1OMZEWH8P2NBG9C9HOO5ILH0MO1PEISD6EUXJ0A367RHEDA4PUCZ4P5UQJBDR
- # Enables Vulners search & exploit tools
-export HYBRID_API_KEY=yt0oycyq3a74616dpuu1c4gx751b8e61ua74rqlh5ee30e4c2w1aj6dm0f53926b
- # Enables 3 Hybrid Analysis malware tools
-
-# Phishing
-export PHISHTANK_API_KEY=your-key      # Higher rate limits for PhishTank
-
-# Tor SOCKS5 proxy (for .onion access)
-export TOR_SOCKS_HOST=127.0.0.1       # Default: 127.0.0.1
-export TOR_SOCKS_PORT=9050            # Default: 9050
+{
+  "mcpServers": {
+    "darknet": {
+      "command": "npx",
+      "args": ["-y", "darknet-mcp-server"],
+      "env": {
+        "HIBP_API_KEY": "${HIBP_API_KEY}",
+        "INTELX_API_KEY": "${INTELX_API_KEY}",
+        "OTX_API_KEY": "${OTX_API_KEY}",
+        "ABUSEIPDB_API_KEY": "${ABUSEIPDB_API_KEY}",
+        "ABUSECH_AUTH_KEY": "${ABUSECH_AUTH_KEY}",
+        "PULSEDIVE_API_KEY": "${PULSEDIVE_API_KEY}",
+        "HUDSONROCK_API_KEY": "${HUDSONROCK_API_KEY}",
+        "VULNERS_API_KEY": "${VULNERS_API_KEY}",
+        "HYBRID_API_KEY": "${HYBRID_API_KEY}",
+        "PHISHTANK_API_KEY": "${PHISHTANK_API_KEY}",
+        "TOR_SOCKS_HOST": "${TOR_SOCKS_HOST:-127.0.0.1}",
+        "TOR_SOCKS_PORT": "${TOR_SOCKS_PORT:-9050}"
+      }
+    }
+  }
+}
